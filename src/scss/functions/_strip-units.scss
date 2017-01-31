@@ -1,0 +1,7 @@
+@function strip-units($val) {
+  $newVal: 0;
+  @if $val != null {
+    $newVal: $val;
+  }
+  @return ($newVal / ($newVal * 0 + 1));
+}

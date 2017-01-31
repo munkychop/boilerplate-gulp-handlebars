@@ -1,0 +1,24 @@
+$color-red                : #f23c06;
+$color-orange             : #f89c12;
+$color-yellow             : #fef764;
+$color-green              : #9cb806;
+$color-blue               : #35d3da;
+
+
+$font-size-base           : 16;
+$font-size-base-px        : $font-size-base * 1px;
+
+$font-family-sans         : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif        : Georgia, "Times New Roman", Times, serif;
+$font-family-mono         : Menlo, Monaco, "Courier New", monospace;
+
+$font-family-base         : $font-family-sans;
+$font-family-alt          : $font-family-serif;
+
+$mq-base: $font-size-base;
+$breakpoints: (
+  narrow                  : 400px,
+  mid                     : 750px,
+  wide                    : 1000px,
+  huge                    : 1250px
+);

@@ -46,7 +46,7 @@ const _compile = {
       .pipe(_rename(_paths.distFile))
       .pipe(_sourcemaps.write('.'))
       .pipe(_gulp.dest(_paths.distDir))
-      .pipe(_utils.browserSync.stream());
+      .pipe(_utils.browserSync.stream({match: '**/*.css'}));
   },
 
   dist : function () {
@@ -55,7 +55,7 @@ const _compile = {
       .pipe(_postcss(_postcssDistProcessors))
       .pipe(_rename(_paths.distFile))
       .pipe(_gulp.dest(_paths.distDir))
-      .pipe(_utils.browserSync.stream());
+      .pipe(_utils.browserSync.stream({match: '**/*.css'}));
   }
 };
 

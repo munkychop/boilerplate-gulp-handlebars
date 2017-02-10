@@ -36,7 +36,7 @@ const _compile = {
       .pipe(_sourcemaps.init())
       .pipe(_sourcemaps.write('.'))
       .pipe(_gulp.dest(_paths.distDir))
-      .pipe(_utils.browserSync.stream());
+      .pipe(_utils.browserSync.stream({match: '**/*.js'}));
   },
 
   dist : () => {
@@ -57,7 +57,7 @@ const _compile = {
       .pipe(_uglify())
       .pipe(_sourcemaps.write('.'))
       .pipe(_gulp.dest(_paths.distDir))
-      .pipe(_utils.browserSync.stream());
+      .pipe(_utils.browserSync.stream({match: '**/*.js'}));
   }
 };
 

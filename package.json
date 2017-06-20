@@ -4,10 +4,11 @@
   "description": "Hello project boilerplate using Scss, ES6, Browserify, Handlebars, and Gulp",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "concurrently \"gulp css:dev\" \"gulp js:dev\" \"gulp markup:dev\" \"gulp images:dev\"",
-    "dist": "concurrently \"gulp css:dist\" \"gulp js:dist\" \"gulp markup:dist\" \"gulp images:dist\"",
+    "lint": "eslint src/js/**",
+    "dev": "concurrently \"gulp css:dev\" \"npm run lint && gulp js:dev\" \"gulp markup:dev\" \"gulp images:dev\"",
+    "dist": "concurrently \"gulp css:dist\" \"npm run lint && gulp js:dist\" \"gulp markup:dist\" \"gulp images:dist\"",
     "start": "npm run dev && gulp watch",
-    "js": "gulp js:dev",
+    "js": "npm run lint && gulp js:dev",
     "js-watch": "npm run js && gulp watch:js",
     "css": "gulp css:dev",
     "css-watch": "gulp css:dev && gulp watch:css"
@@ -25,6 +26,7 @@
     "browser-sync": "^2.18.6",
     "browserify": "^13.3.0",
     "cssnano": "^3.10.0",
+    "eslint": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-postcss": "^6.2.0",

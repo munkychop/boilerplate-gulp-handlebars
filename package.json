@@ -4,11 +4,11 @@
   "description": "Hello project boilerplate using Scss, ES6, Browserify, Handlebars, and Gulp",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "gulp css:dev & gulp js:dev & gulp markup:dev & gulp images:dev & wait",
-    "dist": "gulp css:dist & gulp js:dist & gulp markup:dist & gulp images:dist & wait",
+    "dev": "concurrently \"gulp css:dev\" \"gulp js:dev\" \"gulp markup:dev\" \"gulp images:dev\"",
+    "dist": "concurrently \"gulp css:dist\" \"gulp js:dist\" \"gulp markup:dist\" \"gulp images:dist\"",
     "start": "npm run dev && gulp watch",
     "js": "gulp js:dev",
-    "js-watch": "gulp js:dev && gulp watch:js",
+    "js-watch": "npm run js && gulp watch:js",
     "css": "gulp css:dev",
     "css-watch": "gulp css:dev && gulp watch:css"
   },

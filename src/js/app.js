@@ -1,38 +1,42 @@
-(function (){
+import _handlebars from 'hbsfy/runtime';
 
-  const _handlebars = require('hbsfy/runtime');
-  const _layout = require('layouts/layout.hbs');
-  const _homeView = require('views/homeView.hbs');
-  
-  let _mainContainer;
-  let _viewContainer;
+// Layouts
+import _layout from'layouts/layout.hbs';
+import _homeView from 'views/homeView.hbs';
 
-  function init () {
-    _mainContainer = document.querySelector('#main');
+// Partials
+import _hamburgerPartial from 'components/hamburger.hbs';
+import _headerPartial from 'components/header.hbs';
+import _menuPartial from 'components/menu.hbs';
 
-    registerPartials();
-    renderLayout({});
+let _mainContainer;
+let _viewContainer;
 
-    // The view container must only be queried after the main layout has been rendered.
-    _viewContainer = document.querySelector('#view-container');
-    renderView(_homeView, {});
-  }
+function init () {
+  _mainContainer = document.querySelector('#main');
 
-  function renderLayout (data) {
-    var templateHtml = _layout(data);
-    _mainContainer.innerHTML = templateHtml;
-  }
+  registerPartials();
+  renderLayout({});
 
-  function renderView (viewTemplate, data) {
-    var templateHtml = viewTemplate(data);
-    _viewContainer.innerHTML = templateHtml;
-  }
+  // The view container must only be queried after the main layout has been rendered.
+  _viewContainer = document.querySelector('#view-container');
+  renderView(_homeView, {});
+}
 
-  function registerPartials () {
-    _handlebars.registerPartial('hamburger', require('components/hamburger.hbs'));
-    _handlebars.registerPartial('header', require('components/header.hbs'));
-    _handlebars.registerPartial('menu', require('components/menu.hbs'));
-  }
+function renderLayout (data) {
+  const templateHtml = _layout(data);
+  _mainContainer.innerHTML = templateHtml;
+}
 
-  document.addEventListener('DOMContentLoaded', init);
-})();
+function renderView (viewTemplate, data) {
+  const templateHtml = viewTemplate(data);
+  _viewContainer.innerHTML = templateHtml;
+}
+
+function registerPartials () {
+  _handlebars.registerPartial('hamburger', _hamburgerPartial);
+  _handlebars.registerPartial('header', _headerPartial);
+  _handlebars.registerPartial('menu', _menuPartial);
+}
+
+document.addEventListener('DOMContentLoaded', init);

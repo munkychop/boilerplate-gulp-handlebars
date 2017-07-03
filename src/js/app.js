@@ -1,7 +1,7 @@
 import _handlebars from 'hbsfy/runtime';
 
 // Layouts
-import _layout from'layouts/layout.hbs';
+import _layout from 'layouts/layout.hbs';
 import _homeView from 'views/homeView.hbs';
 
 // Partials

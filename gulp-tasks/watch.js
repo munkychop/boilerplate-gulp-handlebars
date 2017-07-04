@@ -11,11 +11,11 @@ function watchCss () {
 }
 
 function watchJs () {
-  return _gulp.watch(`${_js.paths.srcDir}**/*.js`, [_js.tasks.dev]);
+  return _gulp.watch([`${_js.paths.srcDir}**/*.js`, `${_markup.paths.srcDir}**/*.hbs`], [_js.tasks.dev]);
 }
 
 function watchMarkup () {
-  return _gulp.watch([`${_markup.paths.srcDir}**/*.html`, `${_markup.paths.srcDir}**/*.hbs`], [_markup.tasks.dev]);
+  return _gulp.watch(`${_markup.paths.srcDir}**/*.html`, [_markup.tasks.dev]);
 }
 
 _gulp.task('watch', () => {

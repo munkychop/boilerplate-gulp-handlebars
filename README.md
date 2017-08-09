@@ -1,4 +1,4 @@
-# Hello Project Boilerplate
+# Project Boilerplate
 
 - Gulp
 - Scss

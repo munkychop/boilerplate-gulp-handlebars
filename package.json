@@ -1,7 +1,7 @@
 {
   "name": "boilerplate-gulp-handlebars",
   "version": "1.0.0",
-  "description": "Hello project boilerplate using Scss, ES6, Browserify, Handlebars, and Gulp",
+  "description": "Project boilerplate using Scss, ES6, Browserify, Handlebars, and Gulp",
   "main": "dist/app.js",
   "scripts": {
     "lint": "eslint src/js/**",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Hello-Group/boilerplate-gulp-handlebars.git"
+    "url": "git@github.com:munkychop/boilerplate-gulp-handlebars.git"
   },
   "author": "Ivan Hayes",
   "license": "UNLICENSED",
@@ -40,9 +40,9 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "bugs": {
-    "url": "https://github.com/Hello-Group/boilerplate-gulp-handlebars/issues"
+    "url": "https://github.com/munkychop/boilerplate-gulp-handlebars/issues"
   },
-  "homepage": "https://github.com/Hello-Group/boilerplate-gulp-handlebars#readme",
+  "homepage": "https://github.com/munkychop/boilerplate-gulp-handlebars#readme",
   "dependencies": {
     "handlebars": "^4.0.6",
     "hbsfy": "^2.7.0"
